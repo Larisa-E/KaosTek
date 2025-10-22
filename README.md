@@ -9,12 +9,16 @@ KaosTek is a lightweight PHP + MySQL project that demonstrates a simple customer
 - Read-optimized database views for the dashboard (OrderDetails, rapport)
 - Compact PHP codebase using mysqli and a single connection helper
 - Clear separation between public entry points and reusable code
+- Responsive UI built with Bootstrap 5 (CDN)
 
 ## Tech stack
 
 - PHP 8.x (procedural, server-rendered)
 - MariaDB/MySQL (InnoDB)
 - mysqli extension
+- Bootstrap 5 (via CDN) for styling/layout
+- HTML5 with minimal JavaScript; jQuery Slim included where convenient
+- Mermaid (docs) for the ER diagram in this README
 
 ## Project structure
 
