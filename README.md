@@ -57,6 +57,64 @@ Materialized views (created via SQL script) for read-friendly pages:
 
 See `database/kaostek_schema.sql` for the exact DDL and `database/queries.sql` for example reads.
 
+### ER diagram
+
+```mermaid
+erDiagram
+   USERS {
+      int id PK
+      varchar username UNIQUE
+      varchar password
+      timestamp created_at
+   }
+
+   CUSTOMERS {
+      int customer_id PK
+      varchar customer_name
+      varchar address
+   }
+
+   PRODUCTS {
+      int product_id PK
+      varchar product_name
+      decimal price
+   }
+
+   ORDERS {
+      int order_id PK
+      int customer_id FK
+      date order_date
+   }
+
+   ORDER_ITEMS {
+      int order_item_id PK
+      int order_id FK
+      int product_id FK
+      int quantity
+      decimal price_each
+   }
+
+   CUSTOMERS ||--o{ ORDERS : "places (DELETE RESTRICT)"
+   ORDERS    ||--|{ ORDER_ITEMS : "contains (DELETE CASCADE)"
+   PRODUCTS  ||--o{ ORDER_ITEMS : "referenced by (DELETE RESTRICT)"
+```
+
+Views (derived/read-only):
+
+```mermaid
+erDiagram
+   ORDERDETAILS_VIEW {
+      varchar product_name
+      int quantity
+      decimal price
+   }
+   RAPPORT_VIEW {
+      int customer_id
+      varchar customer_name
+      int order_count
+   }
+```
+
 ## Application flow
 
 1. User signs in on `public/login.php`
