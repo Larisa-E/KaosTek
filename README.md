@@ -9,6 +9,14 @@ KaosTek is a lightweight PHP + MySQL project that demonstrates a simple customer
 - Read-optimized database views for the dashboard (OrderDetails, rapport)
 - Responsive UI built with Bootstrap 5 (CDN)
 
+## Demo
+
+If you add media under `assets/`, the README will display it here:
+
+![KaosTek demo](assets/kaostek-demo.gif)
+
+[Watch the full demo (MP4)](assets/kaostek-demo.mp4)
+
 ## Tech stack
 
 - PHP 8.x 
@@ -135,10 +143,10 @@ erDiagram
 - Passwords are hashed with PHP’s `password_hash` and verified with `password_verify`.
 - Database access is centralized in `src/db.php` to avoid duplicate credentials.
 - Public files are isolated under `public/`; shared code lives in `src/`.
+ 
+## Roadmap
 
-## Demo
-
-![KaosTek demo](assets/kaostek-demo.gif)
-
-[Watch the full demo (MP4)](assets/kaostek-demo.mp4)
-
+- Basic CRUD pages for customers and orders
+- Pagination and search on the dashboard
+- CSRF protection and improved input validation
+- Containerized local dev environment (docker-compose)
