@@ -11,8 +11,6 @@ KaosTek is a lightweight PHP + MySQL project that demonstrates a simple customer
 
 ## Demo
 
-If you add media under `assets/`, the README will display it here:
-
 ![KaosTek demo](assets/kaostek-demo.gif)
 
 [Watch the full demo (MP4)](assets/kaostek-demo.mp4)
