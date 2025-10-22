@@ -115,6 +115,14 @@ erDiagram
    }
 ```
 
+### PNG diagram
+
+If Mermaid isn’t rendered (or for a quick visual), here’s the same schema as an image:
+
+![KaosTek DB Diagram](assets/kaostek-db-diagram.png)
+
+Place your exported diagram image at `assets/kaostek-db-diagram.png` to display it here.
+
 ## Application flow
 
 1. User signs in on `public/login.php`
