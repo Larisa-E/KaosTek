@@ -7,18 +7,14 @@ KaosTek is a lightweight PHP + MySQL project that demonstrates a simple customer
 - Authentication with password hashing (no plaintext passwords)
 - Customers, products, orders, and order items data model
 - Read-optimized database views for the dashboard (OrderDetails, rapport)
-- Compact PHP codebase using mysqli and a single connection helper
-- Clear separation between public entry points and reusable code
 - Responsive UI built with Bootstrap 5 (CDN)
 
 ## Tech stack
 
-- PHP 8.x (procedural, server-rendered)
-- MariaDB/MySQL (InnoDB)
-- mysqli extension
+- PHP 8.x 
+- MariaDB/MySQL
 - Bootstrap 5 (via CDN) for styling/layout
 - HTML5 with minimal JavaScript; jQuery Slim included where convenient
-- Mermaid (docs) for the ER diagram in this README
 
 ## Project structure
 
@@ -54,7 +50,7 @@ Relational schema with referential integrity and indexes:
 - orders: id, customer_id (FK), order_date, total
 - order_items: id, order_id (FK), product_id (FK), quantity, unit_price
 
-Materialized views (created via SQL script) for read-friendly pages:
+Materialized views:
 
 - OrderDetails: line-item detail joined with product name and price
 - rapport: customer summary with total order count
@@ -121,11 +117,7 @@ erDiagram
 
 ### PNG diagram
 
-If Mermaid isn’t rendered (or for a quick visual), here’s the same schema as an image:
-
 ![KaosTek DB Diagram](assets/kaostek-db-diagram.png)
-
-Place your exported diagram image at `assets/kaostek-db-diagram.png` to display it here.
 
 ## Application flow
 
@@ -146,15 +138,7 @@ Place your exported diagram image at `assets/kaostek-db-diagram.png` to display 
 
 ## Demo
 
-If you add media under `assets/`, the README will display it here:
-
 ![KaosTek demo](assets/kaostek-demo.gif)
 
 [Watch the full demo (MP4)](assets/kaostek-demo.mp4)
 
-## Roadmap
-
-- Basic CRUD pages for customers and orders
-- Pagination and search on the dashboard
-- CSRF protection and improved input validation
-- Containerized local dev environment (docker-compose)
