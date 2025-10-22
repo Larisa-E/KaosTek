@@ -67,21 +67,21 @@ See `database/kaostek_schema.sql` for the exact DDL and `database/queries.sql` f
 erDiagram
    USERS {
       int id PK
-      varchar username UNIQUE
-      varchar password
-      timestamp created_at
+      string username
+      string password
+      datetime created_at
    }
 
    CUSTOMERS {
       int customer_id PK
-      varchar customer_name
-      varchar address
+      string customer_name
+      string address
    }
 
    PRODUCTS {
       int product_id PK
-      varchar product_name
-      decimal price
+      string product_name
+      float price
    }
 
    ORDERS {
@@ -95,7 +95,7 @@ erDiagram
       int order_id FK
       int product_id FK
       int quantity
-      decimal price_each
+      float price_each
    }
 
    CUSTOMERS ||--o{ ORDERS : "places (DELETE RESTRICT)"
@@ -108,13 +108,13 @@ Views (derived/read-only):
 ```mermaid
 erDiagram
    ORDERDETAILS_VIEW {
-      varchar product_name
+      string product_name
       int quantity
-      decimal price
+      float price
    }
    RAPPORT_VIEW {
       int customer_id
-      varchar customer_name
+      string customer_name
       int order_count
    }
 ```
