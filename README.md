@@ -52,7 +52,6 @@ KaosTek/
    - welcome.php                # redirect shim to /public/welcome.php
    - create_user.php            # redirect shim to /public/create_user.php
    - db.php                     # back-compat shim → includes src/db.php
-   - health.php                 # duplicate of public/health.php (consider removing or restricting)
    - README.md
    - .gitignore
 ```
