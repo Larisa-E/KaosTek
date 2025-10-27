@@ -170,21 +170,16 @@ erDiagram
 1. User signs in on `public/login.php`
 2. On success, they can access the dashboard at `public/index.php`
 3. Dashboard lists:
+   - Products
    - Order details (from `OrderDetails` view)
    - Customers
    - Orders
    - A simple report (from `rapport` view)
-4. Logout ends the session and returns to the login page
+5. Logout ends the session and returns to the login page
 
 ## Security notes
 
 - Passwords are hashed with PHP’s `password_hash` and verified with `password_verify`.
 - Database access is centralized in `src/db.php` to avoid duplicate credentials.
 - Public files are isolated under `public/`; shared code lives in `src/`.
- 
-## Roadmap
 
-- Basic CRUD pages for customers and orders
-- Pagination and search on the dashboard
-- CSRF protection and improved input validation
-- Containerized local dev environment (docker-compose)
