@@ -44,6 +44,9 @@ error_reporting(E_ALL);
                         <a class="nav-link active" aria-current="page" href="welcome.php">Welcome</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#orderDetails">Order Details</a>
                     </li>
                     <li class="nav-item">
@@ -66,6 +69,34 @@ error_reporting(E_ALL);
     <div class="container mt-5">
         <h2 class="text-center mb-4">KaosTek Dashboard</h2>
         <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>! <a href="logout.php">Logout</a></p>
+
+        <!-- products (sorted cheapest to most expensive) -->
+        <h3 id="products">Products</h3>
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = "SELECT product_name, price FROM products ORDER BY price ASC, product_name ASC";
+                $result = $conn->query($sql);
+
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                                <td>" . htmlspecialchars($row['product_name']) . "</td>
+                                <td>" . htmlspecialchars($row['price']) . "</td>
+                              </tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='2' class='text-center'>No products found</td></tr>";
+                }
+                ?>
+            </tbody>
+        </table>
 
         <!-- order details -->
         <h3 id="orderDetails">Order Details</h3>
