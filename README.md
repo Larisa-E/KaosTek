@@ -26,27 +26,35 @@ KaosTek is a lightweight PHP + MySQL project that demonstrates a simple customer
 
 ```
 KaosTek/
-├─ public/                 # Web-accessible entry points
-│  ├─ index.php            # dashboard (requires session)
-│  ├─ login.php            # sign-in form and auth
-│  ├─ logout.php           # end session
-│  ├─ welcome.php          # landing page; links to dashboard
-│  ├─ create_user.php      # seed demo users (optional; for local/dev)
-│  └─ health.php           # runtime diagnostics (PHP/mysqli)
-├─ src/                    # PHP libraries/helpers (non-public)
-│  └─ db.php               # get_db() connection helper
-├─ database/               # SQL schema, seed, and sample queries
-│  ├─ kaostek_schema.sql   # DDL: tables, indexes, FKs, and view definitions
-│  ├─ kaostek_seed.sql     # Sample data (users, customers, products, orders, order_items)
-│  ├─ create_all.sql       # Convenience script to create schema and seed data
-│  └─ queries.sql          # Example SELECTs and reporting queries
-├─ assets/                 # Media used by the README and demos
-│  ├─ logo.png             # App logo
-│  ├─ kaostek-demo.gif
-│  ├─ kaostek-demo.mp4
-│  └─ kaostek-db-diagram.png
-├─ index.php               # Root redirect → public/welcome.php
-└─ db.php                  # Back-compat shim → src/db.php
+-- public/                      # Web-accessible entry points (set your web server's document root here)
+   - index.php                  # dashboard (requires session)
+   - login.php                  # sign-in form and auth
+   - logout.php                 # end session
+   - welcome.php                # landing page; links to dashboard
+   - create_user.php            # seed demo users (optional; for local/dev)
+   - health.php                 # runtime diagnostics (PHP/mysqli)
+-- src/                         # PHP libraries/helpers (non-public)
+   - db.php                     # get_db() connection helper
+-- database/                    # SQL schema, seed, and sample queries
+   - kaostek_schema.sql         # DDL: tables, indexes, FKs, and view definitions
+   - kaostek_seed.sql           # Sample data (users, customers, products, orders, order_items)
+   - create_all.sql             # Convenience script to create schema and seed data
+   - queries.sql                # Example SELECTs and reporting queries
+-- assets/                      # Media used by the README and demos
+   - logo.png                   # App logo
+   - kaostek-demo.gif
+   - kaostek-demo.mp4
+   - kaostek-db-diagram.png
+-- Root (shims, legacy, and docs)
+   - index.php                  # redirect shim to /public (hosting that can't set DocumentRoot)
+   - login.php                  # redirect shim to /public/login.php
+   - logout.php                 # redirect shim to /public/logout.php
+   - welcome.php                # redirect shim to /public/welcome.php
+   - create_user.php            # redirect shim to /public/create_user.php
+   - db.php                     # back-compat shim → includes src/db.php
+   - health.php                 # duplicate of public/health.php (consider removing or restricting)
+   - README.md
+   - .gitignore
 ```
 
 ## Data model
