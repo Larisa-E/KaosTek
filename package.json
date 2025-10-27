@@ -1,0 +1,11 @@
+{
+  "name": "kaostek",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KaosTek PHP app helper scripts",
+  "scripts": {
+    "start": "php8.3 -S 127.0.0.1:35381 -t public",
+    "start:lan": "php8.3 -S 0.0.0.0:35381 -t public",
+    "health": "curl -s http://127.0.0.1:35381/health.php || true"
+  }
+}
