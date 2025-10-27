@@ -36,7 +36,7 @@ Health endpoint:
    - PHP version and SAPI
    - Whether `mysqli` is loaded
    - DB host/port being used
-   - `db_ok: yes|no` showing a simple SELECT 1 probe to the database
+   - `db_ok: yes|no` showing a simple SELECT 1 probe to the database. It’s the simplest possible database query. If the app can connect to the database and run this query, the database is considered OK so the app successfully connected to the database.
 
 ## Project structure
 
