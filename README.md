@@ -22,6 +22,22 @@ KaosTek is a lightweight PHP + MySQL project that demonstrates a simple customer
 - Bootstrap 5 (via CDN) for styling/layout
 - HTML5 with minimal JavaScript; jQuery Slim included where convenient
 
+## How to run
+
+- Using VS Code task:
+   - Run the task "Serve PHP 8.3 (public, 35381)" to start the dev server.
+   - It serves http://127.0.0.1:35381/ with `public/` as the document root.
+- Using npm scripts:
+   - `npm run start` — serve on localhost only
+   - `npm run start:lan` — bind to 0.0.0.0 so other devices on the network can reach it
+
+Health endpoint:
+- Visit `http://127.0.0.1:35381/health.php` to see:
+   - PHP version and SAPI
+   - Whether `mysqli` is loaded
+   - DB host/port being used
+   - `db_ok: yes|no` showing a simple SELECT 1 probe to the database
+
 ## Project structure
 
 ```
@@ -46,6 +62,13 @@ KaosTek/
    - kaostek-demo.gif
    - kaostek-demo.mp4
    - kaostek-db-diagram.png
+
+## Changelog (2025-10-27)
+
+- Fix: Logo not visible — moved `assets/logo.png` into `public/assets/logo.png` so it’s served by the app.
+- Update: All pages now reference the logo via `assets/logo.png` (docroot-relative) for consistency.
+- Improve: Health endpoint now includes a `db_ok` probe (`SELECT 1`) to verify DB connectivity quickly.
+- Docs: Updated project structure to document `public/assets/` and adjusted references accordingly.
 -- Root (shims, legacy, and docs)
    - index.php                  # redirect shim to /public (hosting that can't set DocumentRoot)
    - README.md
