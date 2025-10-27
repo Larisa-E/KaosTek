@@ -26,24 +26,24 @@ KaosTek is a lightweight PHP + MySQL project that demonstrates a simple customer
 
 ```
 KaosTek/
-├─ public/                # Web-accessible entry points
-│  ├─ login.php           # sign-in form and auth
-│  ├─ welcome.php         # landing page; links to dashboard
-│  ├─ index.php           # dashboard (requires session)
-│  ├─ logout.php          # end session
-│  ├─ create_user.php     # seed demo users (optional)
-│  └─ health.php          # runtime diagnostics (PHP/mysqli)
-├─ src/                   # PHP libraries/helpers
-│  └─ db.php              # get_db() connection helper
-├─ database/              # SQL schema, seed, and sample queries
-│  ├─ kaostek_schema.sql
-│  ├─ kaostek_seed.sql
-│  ├─ create_all.sql
-│  └─ queries.sql
-├─ assets/                # Media used by the README (gif/mp4)
-├─ logo.png               # App logo
-├─ index.php              # Root redirect → public/welcome.php
-└─ db.php                 # Back-compat shim → src/db.php
+-- public/                # Web-accessible entry points
+ - login.php              # sign-in form and auth
+ - welcome.php            # landing page; links to dashboard
+ - index.php              # dashboard (requires session)
+ - logout.php             # end session
+ - create_user.php        # seed demo users (optional)
+ - health.php             # runtime diagnostics (PHP/mysqli)
+-- src/                   # PHP libraries/helpers
+   - db.php               # get_db() connection helper
+-- database/              # SQL schema, seed, and sample queries
+   - kaostek_schema.sql
+   - kaostek_seed.sql
+   - create_all.sql
+   - queries.sql
+-- assets/                # Media used by the README (gif/mp4)
+   - logo.png             # App logo
+   - index.php            # Root redirect → public/welcome.php
+   - db.php               # Back-compat shim → src/db.php
 ```
 
 ## Data model
