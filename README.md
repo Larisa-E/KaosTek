@@ -41,14 +41,17 @@ Health endpoint:
 ## Dev tooling
 
 - VS Code task
-   - Location: `.vscode/tasks.json`
-   - Task: "Serve PHP 8.3 (public, 35381)" — starts the PHP dev server on port 35381 with `public/` as the document root.
+   - Use start for normal local dev on your machine.
+   - `.vscode/tasks.json`
+   - "Serve PHP 8.3 (public, 35381)" — starts the PHP dev server on port 35381 with `public/` as the document root.
 
 - NPM scripts
-   - Location: `package.json`
+   - Use start:lan when you want to open the app on another device (phone/tablet/laptop) on the same network.
+   - `package.json`
    - `npm run start` — serve on 127.0.0.1:35381 (local only)
    - `npm run start:lan` — serve on 0.0.0.0:35381 (reachable on your LAN)
    - `npm run health` — quick check that the health endpoint responds
+
 
 ## Project structure
 
