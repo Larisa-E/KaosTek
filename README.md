@@ -62,13 +62,9 @@ KaosTek/
    - kaostek-demo.gif
    - kaostek-demo.mp4
    - kaostek-db-diagram.png
-
-## Changelog (2025-10-27)
-
-- Fix: Logo not visible — moved `assets/logo.png` into `public/assets/logo.png` so it’s served by the app.
-- Update: All pages now reference the logo via `assets/logo.png` (docroot-relative) for consistency.
-- Improve: Health endpoint now includes a `db_ok` probe (`SELECT 1`) to verify DB connectivity quickly.
-- Docs: Updated project structure to document `public/assets/` and adjusted references accordingly.
+-- .vscode/                     # VS Code tasks/config for development
+   - tasks.json                 # Task: Serve PHP 8.3 (public, 35381)
+-- package.json                 # NPM scripts (start, start:lan, health)
 -- Root (shims, legacy, and docs)
    - index.php                  # redirect shim to /public (hosting that can't set DocumentRoot)
    - README.md
