@@ -7,3 +7,18 @@ $host = getenv('DB_HOST') ?: '127.0.0.1';
 $port = getenv('DB_PORT') ?: '3306';
 echo "DB_HOST: $host\n";
 echo "DB_PORT: $port\n";
+
+// Optional DB connectivity probe
+require_once __DIR__ . '/../src/db.php';
+try {
+	$conn = get_db();
+	$res = $conn->query('SELECT 1 AS ok');
+	if ($res && ($row = $res->fetch_assoc()) && (int)$row['ok'] === 1) {
+		echo "db_ok: yes\n";
+	} else {
+		echo "db_ok: no\n";
+	}
+	$conn->close();
+} catch (Throwable $e) {
+	echo "db_ok: no\n";
+}
