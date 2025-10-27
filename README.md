@@ -47,7 +47,6 @@ KaosTek/
    - kaostek-db-diagram.png
 -- Root (shims, legacy, and docs)
    - index.php                  # redirect shim to /public (hosting that can't set DocumentRoot)
-   - db.php                     # back-compat shim → includes src/db.php
    - README.md
    - .gitignore
 ```
