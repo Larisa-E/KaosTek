@@ -51,7 +51,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="../logo.png" alt="Logo" style="inline-size: 200px; block-size: 200px;">
+                <img src="../assets/logo.png" alt="Logo" style="inline-size: 200px; block-size: 200px;">
                 <div class="position-relative">
                 <div class="position-absolute top-0 end-0"></div>
                 </div>

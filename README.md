@@ -26,24 +26,27 @@ KaosTek is a lightweight PHP + MySQL project that demonstrates a simple customer
 
 ```
 KaosTek/
--- public/                # Web-accessible entry points
- - login.php              # sign-in form and auth
- - welcome.php            # landing page; links to dashboard
- - index.php              # dashboard (requires session)
- - logout.php             # end session
- - create_user.php        # seed demo users (optional)
- - health.php             # runtime diagnostics (PHP/mysqli)
--- src/                   # PHP libraries/helpers
-   - db.php               # get_db() connection helper
--- database/              # SQL schema, seed, and sample queries
-   - kaostek_schema.sql   # DDL: tables, indexes, foreign keys, and view definitions
-   - kaostek_seed.sql     # Sample data: INSERTs for users, customers, products, orders, and order_items (includes hashed passwords)
-   - create_all.sql       # Convenience script to create schema + load seed data and to create/refresh views (safe for local/dev use)
-   - queries.sql          # Example SELECTs and reporting queries used by the dashboard and for exploring the dataset
--- assets/                # Media used by the README (gif/mp4)
-   - logo.png             # App logo
-   - index.php            # Root redirect → public/welcome.php
-   - db.php               # Back-compat shim → src/db.php
+├─ public/                 # Web-accessible entry points
+│  ├─ index.php            # dashboard (requires session)
+│  ├─ login.php            # sign-in form and auth
+│  ├─ logout.php           # end session
+│  ├─ welcome.php          # landing page; links to dashboard
+│  ├─ create_user.php      # seed demo users (optional; for local/dev)
+│  └─ health.php           # runtime diagnostics (PHP/mysqli)
+├─ src/                    # PHP libraries/helpers (non-public)
+│  └─ db.php               # get_db() connection helper
+├─ database/               # SQL schema, seed, and sample queries
+│  ├─ kaostek_schema.sql   # DDL: tables, indexes, FKs, and view definitions
+│  ├─ kaostek_seed.sql     # Sample data (users, customers, products, orders, order_items)
+│  ├─ create_all.sql       # Convenience script to create schema and seed data
+│  └─ queries.sql          # Example SELECTs and reporting queries
+├─ assets/                 # Media used by the README and demos
+│  ├─ logo.png             # App logo
+│  ├─ kaostek-demo.gif
+│  ├─ kaostek-demo.mp4
+│  └─ kaostek-db-diagram.png
+├─ index.php               # Root redirect → public/welcome.php
+└─ db.php                  # Back-compat shim → src/db.php
 ```
 
 ## Data model
