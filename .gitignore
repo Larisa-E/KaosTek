@@ -1,2 +1,6 @@
 # Ignore local UML diagram exports
 UML Diagram*.pdf
+
+# Ignore local deliverables and archives (do not commit to GitHub)
+deliverables/
+*.zip
