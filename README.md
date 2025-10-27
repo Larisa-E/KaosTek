@@ -36,10 +36,10 @@ KaosTek/
 -- src/                   # PHP libraries/helpers
    - db.php               # get_db() connection helper
 -- database/              # SQL schema, seed, and sample queries
-   - kaostek_schema.sql
-   - kaostek_seed.sql
-   - create_all.sql
-   - queries.sql
+   - kaostek_schema.sql   # DDL: tables, indexes, foreign keys, and view definitions
+   - kaostek_seed.sql     # Sample data: INSERTs for users, customers, products, orders, and order_items (includes hashed passwords)
+   - create_all.sql       # Convenience script to create schema + load seed data and to create/refresh views (safe for local/dev use)
+   - queries.sql          # Example SELECTs and reporting queries used by the dashboard and for exploring the dataset
 -- assets/                # Media used by the README (gif/mp4)
    - logo.png             # App logo
    - index.php            # Root redirect → public/welcome.php
