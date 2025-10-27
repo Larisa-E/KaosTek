@@ -33,6 +33,8 @@ KaosTek/
    - welcome.php                # landing page; links to dashboard
    - create_user.php            # seed demo users (optional; for local/dev)
    - health.php                 # runtime diagnostics (PHP/mysqli)
+   -- assets/                   # Static web assets served by the app
+      - logo.png                # App logo (used in UI)
 -- src/                         # PHP libraries/helpers (non-public)
    - db.php                     # get_db() connection helper
 -- database/                    # SQL schema, seed, and sample queries
@@ -41,7 +43,6 @@ KaosTek/
    - create_all.sql             # Convenience script to create schema and seed data
    - queries.sql                # Example SELECTs and reporting queries
 -- assets/                      # Media used by the README and demos
-   - logo.png                   # App logo
    - kaostek-demo.gif
    - kaostek-demo.mp4
    - kaostek-db-diagram.png
