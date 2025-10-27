@@ -54,7 +54,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container mt-5">
         <div class="card text-center">
             <div class="card-body">
-                <img src="../assets/logo.png" alt="Logo" style="inline-size: 200px; block-size: 200px;">
+                <img src="assets/logo.png" alt="Logo" style="inline-size: 200px; block-size: 200px;">
                 <h3 class="card-title mt-2">KAOS丅EK</h3>
             </div>
         </div>
